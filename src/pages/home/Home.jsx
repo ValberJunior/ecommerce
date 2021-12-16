@@ -1,9 +1,10 @@
 import React from 'react';
-import { Navbar } from '../../components';
+import { Announcement, Navbar } from '../../components';
 
 const Home = () => {
     return (
         <div>
+            <Announcement/>
             <Navbar/>
         </div>
     )
