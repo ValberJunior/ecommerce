@@ -1,8 +1,10 @@
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       Hello World
-    </div>
+    </ThemeProvider>
   );
 }
 
