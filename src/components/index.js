@@ -6,3 +6,4 @@ export { default as Categories } from './categories/Categories';
 export { default as CategoryITem } from './categoryItem/CategoryItem';
 export { default as Products } from './products/Products';
 export { default as Product } from './product/Product';
+export { default as Newsletter } from './newsletter/Newsletter';
