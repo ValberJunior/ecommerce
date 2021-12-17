@@ -1,62 +1,44 @@
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons"
 import { ArrowLeft, ArrowRight , Container, Slide, ImgContainer,Image, InfoContainer, Wrapper, Title, Desc, Button } from "./styles"
-import { useState } from "react"
+import { useState } from "react";
+import {sliderItems} from '../../data';
 
 const Slider = () => {
 
     const [ slideIndex, setSlideIndex ] = useState(0);
 
-    const handleClick = ()=>{
-
+    const handleClick = (direction)=>{
+        if(direction==='left'){
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
+        }else{
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+        }
     }
 
     return (
         <Container>
 
-            <ArrowLeft onClick={()=>{handleClick('left')}}>
+            <ArrowLeft direction='left' onClick={()=>{handleClick('left')}}>
                 <ArrowBackIos/>
             </ArrowLeft>
 
-                <Wrapper>
-                    <Slide bg='f5fafd'>
+                <Wrapper slideIndex={slideIndex}>
+                    {sliderItems.map(item=>
+                    <Slide bg={item.bg} key={item.id}>
                         <ImgContainer>
-                        <Image src='https://images2.imgbox.com/34/ac/B0gchqid_o.png' alt='Shop Model'/>
+                        <Image src={item.img} alt='Shop Model'/>
                         </ImgContainer>
 
                         <InfoContainer>
-                            <Title>SUMMER SALE</Title>
-                            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% FOR NEW ARRIVALS.</Desc>
+                            <Title>{item.title}</Title>
+                            <Desc>{item.desc}</Desc>
                             <Button>SHOW NOW</Button>
                         </InfoContainer>
                     </Slide>
-
-                    <Slide bg='fcf1ed'>
-                        <ImgContainer>
-                        <Image src='https://images2.imgbox.com/6b/61/1U5irgVW_o.png' alt='Shop Model'/>
-                        </ImgContainer>
-
-                        <InfoContainer>
-                            <Title>WINTER SALE</Title>
-                            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% FOR NEW ARRIVALS.</Desc>
-                            <Button>SHOW NOW</Button>
-                        </InfoContainer>
-                    </Slide>
-
-                    <Slide bg='fbf0f4'>
-                        <ImgContainer>
-                        <Image src='https://images2.imgbox.com/6b/61/1U5irgVW_o.png' alt='Shop Model'/>
-                        </ImgContainer>
-
-                        <InfoContainer>
-                            <Title>POPULAR SALE</Title>
-                            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% FOR NEW ARRIVALS.</Desc>
-                            <Button>SHOW NOW</Button>
-                        </InfoContainer>
-                    </Slide>
-
+                    )}
                 </Wrapper>
 
-            <ArrowRight onClick={()=>{handleClick('right')}}>
+            <ArrowRight direction='right' onClick={()=>{handleClick('right')}}>
                 <ArrowForwardIos/>
             </ArrowRight>
           

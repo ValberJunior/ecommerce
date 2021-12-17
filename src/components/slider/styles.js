@@ -56,7 +56,9 @@ height: 100vh;
 
 display: flex;
 
-transform: translate(0vw);
+transition: all 1.5s ease;
+
+transform: translate(${props=>props.slideIndex * -100}vw);
 `;
 
 export const Slide = styled.div`
