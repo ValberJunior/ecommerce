@@ -33,4 +33,39 @@ title: 'SHIRT STYLE'},
 {id: 3,
     img:'https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg',
     title: 'LIGHT JACKETS'},
+];
+
+export const popularProducts = [
+    {
+        id:1,
+        img:'https://www.pngarts.com/files/1/T-Shirt-PNG-Image-with-Transparent-Background.png'
+    },
+    {
+        id:2,
+        img:'https://www.pngarts.com/files/3/T-Shirt-Download-Transparent-PNG-Image.png'
+    },
+    {
+        id:3,
+        img:'https://www.pngarts.com/files/1/Cotton-Jacket-Transparent-Images.png'
+    },
+    {
+        id:4,
+        img:'https://www.pngarts.com/files/3/Clothing-PNG-Pic.png'
+    },
+    {
+        id:5,
+        img:'https://www.pngarts.com/files/9/Ripped-Black-Shorts-PNG-Image-Free-Download.png'
+    },
+    {
+        id:6,
+        img:'https://www.pngarts.com/files/2/Obey-Cap-PNG-Image.png'
+    },
+    {
+        id:7,
+        img:'https://www.pngarts.com/files/1/Jeans-Jacket-PNG-Transparent-Image.png'
+    },
+    {
+        id:8,
+        img:'https://www.pngarts.com/files/3/Flat-Sandal-PNG-Photo.png'
+    }
 ]
