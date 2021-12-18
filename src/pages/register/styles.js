@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from '../../components/responsive';
 
 
 export const Container = styled.section`
