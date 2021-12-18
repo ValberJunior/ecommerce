@@ -9,13 +9,13 @@ const Navbar = () => {
                <Left>
                    <Language>EN</Language>
                    <SearchContainer>
-                        <Input/>
+                        <Input placeholder='Search'/>
                         <SearchIcon/>
                    </SearchContainer>
                </Left>
                <Center>
                    <Logo>
-                       MarketPrime.
+                       SHOOP <i style={{color: 'tomato'}} className="fas fa-shopping-bag"></i>
                    </Logo>
                 </Center>
                <Right>

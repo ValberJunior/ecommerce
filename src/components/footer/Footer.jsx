@@ -7,7 +7,9 @@ const Footer = () => {
         <FooterSection>
             <Container>
                 <Left>
-                  <Logo>Market Prime Store.</Logo>
+                  <Logo> 
+                      SHOOP STORE <i style={{color: 'tomato'}} className="fas fa-shopping-bag"></i>
+                  </Logo>
             
                     <Desc>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus libero aperiam, 
