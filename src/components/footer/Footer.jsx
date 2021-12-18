@@ -65,7 +65,7 @@ const Footer = () => {
                     </ContactItem>
 
                     <ContactItem>
-                        <MailICon/> contact@marketprimestore.com
+                        <MailICon/> contact@shoopstore.com
                     </ContactItem>
 
                     <Payment src='https://i.ibb.co/Qfvn4z6/payment.png'/>
