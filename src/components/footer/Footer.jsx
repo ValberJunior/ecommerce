@@ -1,76 +1,82 @@
 import { Facebook, Instagram, Twitter, YouTube } from "@material-ui/icons"
-import { Center, ContactItem, Container, Desc, Left, List, ListItem, Logo, MailICon, MapIcon, Payment, PhoneIcon, Right, SocialContainer, SocialICon, Title } from "./styles"
+import { FooterSection, Center, ContactItem, Container, CopyrightBar, CopyrightSection, Desc, Left, List, ListItem, Logo, MailICon, MapIcon, Payment, PhoneIcon, Right, SocialContainer, SocialICon, Title, CopyrightIcon } from "./styles"
 
 
 const Footer = () => {
     return (
-        <Container>
-            <Left>
-                <Logo>Market Prime Store.</Logo>
-                
-                <Desc>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus libero aperiam, 
-                    consectetur labore nobis harum architecto iste quidem illo possimus corporis quis! Ratione, autem quidem 
-                    aperiam ipsam porro quibusdam? Quod expedita facilis itaque, ellendus modi saepe laudantium
-                 </Desc>
+        <FooterSection>
+            <Container>
+                <Left>
+                  <Logo>Market Prime Store.</Logo>
+            
+                    <Desc>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus libero aperiam, 
+                        consectetur labore nobis harum architecto iste quidem illo possimus corporis quis! Ratione, autem quidem 
+                        aperiam ipsam porro quibusdam? Quod expedita facilis itaque, ellendus modi saepe laudantium
+                        </Desc>
 
-                 <SocialContainer>
-                     <SocialICon color='3B5999'>
-                         <Facebook/>
-                     </SocialICon>
+                        <SocialContainer>
+                            <SocialICon color='3B5999'>
+                                <Facebook/>
+                            </SocialICon>
 
-                     <SocialICon color='E4405F'>
-                         <Instagram/>
-                     </SocialICon>
+                            <SocialICon color='E4405F'>
+                                <Instagram/>
+                            </SocialICon>
 
-                     <SocialICon color='55ACEE'>
-                         <Twitter/>
-                     </SocialICon>
+                            <SocialICon color='55ACEE'>
+                                <Twitter/>
+                            </SocialICon>
 
-                     <SocialICon color='E60023'>
-                         <YouTube/>
-                     </SocialICon>
-                 </SocialContainer>
+                            <SocialICon color='E60023'>
+                                <YouTube/>
+                            </SocialICon>
+                        </SocialContainer>
 
-            </Left>
+                </Left>
 
-            <Center>
-                <Title>Useful Links</Title>
+                <Center>
+                    <Title>Useful Links</Title>
 
-                <List>
-                    <ListItem>Home</ListItem>
-                    <ListItem>Cart</ListItem>
-                    <ListItem>Man Fashion</ListItem>
-                    <ListItem>Woman Fashion</ListItem>
-                    <ListItem>Accessories</ListItem>
-                    <ListItem>My Account</ListItem>
-                    <ListItem>Order Tracking</ListItem>
-                    <ListItem>Wishlist</ListItem>
-                    <ListItem>Terms</ListItem>
+                     <List>
+                        <ListItem>Home</ListItem>
+                        <ListItem>Cart</ListItem>
+                        <ListItem>Man Fashion</ListItem>
+                        <ListItem>Woman Fashion</ListItem>
+                        <ListItem>Accessories</ListItem>
+                        <ListItem>My Account</ListItem>
+                        <ListItem>Order Tracking</ListItem>
+                        <ListItem>Wishlist</ListItem>
+                        <ListItem>Terms</ListItem>
+                     </List>
+                </Center>
 
-                </List>
+                <Right>
+                    <Title>Contact</Title>
 
-            </Center>
+                    <ContactItem>
+                        <MapIcon/> 622 Dixie Path, South Tobinchester 98336
+                    </ContactItem>
 
-            <Right>
-                <Title>Contact</Title>
+                    <ContactItem>
+                        <PhoneIcon/> + 1 234 56 78
+                    </ContactItem>
 
-                <ContactItem>
-                    <MapIcon/> 622 Dixie Path, South Tobinchester 98336
-                </ContactItem>
+                    <ContactItem>
+                        <MailICon/> contact@marketprimestore.com
+                    </ContactItem>
 
-                <ContactItem>
-                    <PhoneIcon/> + 1 234 56 78
-                </ContactItem>
+                    <Payment src='https://i.ibb.co/Qfvn4z6/payment.png'/>
+                </Right>
+             </Container>
 
-                <ContactItem>
-                    <MailICon/> contact@marketprimestore.com
-                </ContactItem>
 
-                <Payment src='https://i.ibb.co/Qfvn4z6/payment.png'/>
-
-            </Right>
-        </Container>
+            <CopyrightSection>
+                <CopyrightBar>
+                    Developed by Valber Junior - 2021 <CopyrightIcon/>
+                </CopyrightBar>
+             </CopyrightSection>
+        </FooterSection>
     )
 }
 

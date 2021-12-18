@@ -1,8 +1,19 @@
-import {  MailOutline, Phone, Room } from "@material-ui/icons";
+import {  Copyright, MailOutline, Phone, Room } from "@material-ui/icons";
 import styled from "styled-components";
 
-export const Container = styled.footer`
+export const FooterSection = styled.footer`
 display: flex;
+flex-align: center;
+justify-content: center;
+
+flex-direction: column;
+
+padding: 10px 0px;
+`;
+
+export const Container = styled.div`
+display: flex;
+padding: 60px;
 `;
 
 export const Left = styled.div`
@@ -90,4 +101,29 @@ width: 50%;
 cursor: pointer;
 
 margin: 10px 0px;
+`;
+
+export const CopyrightSection = styled.div`
+width: 60%;
+margin: auto;
+border-top: 0.5px solid gray;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 20px;
+`;
+
+export const CopyrightBar = styled.span`
+text-align: center
+font-weight: 400;
+
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+
+export const CopyrightIcon = styled(Copyright)`
+margin: 5px;
 `;
