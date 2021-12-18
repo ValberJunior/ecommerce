@@ -1,5 +1,6 @@
-import { Add, Remove, ShoppingBasket } from '@material-ui/icons';
 import styled from 'styled-components';
+import { Add, Remove, ShoppingBasket } from '@material-ui/icons';
+import { mobile } from '../../components/responsive';
 
 export const Container = styled.section`
 
@@ -23,6 +24,8 @@ justify-content: space-between;
 
 padding: 20px;
 
+${mobile({ padding: '25px 5px'})}
+
 `;
 
 export const TopButton = styled.button`
@@ -36,7 +39,7 @@ color: ${props=>props.type === 'filled' && 'white'};
 `;
 
 export const TopTexts = styled.div`
-
+${mobile({ display: 'none'})}
 `;
 
 export const TopText = styled.span`
@@ -48,6 +51,8 @@ margin: 0px 10px;
 export const Bottom = styled.div`
 display: flex;
 justify-content: space-between;
+
+${mobile({ flexDirection: 'column'})}
 `;
 
 export const Info = styled.div`
@@ -59,6 +64,8 @@ display: flex;
 justify-content: space-between;
 
 padding: 30px 5px;
+
+${mobile({ flexDirection: 'column'})}
 `;
 
 export const ProductDetails = styled.div`
@@ -118,11 +125,15 @@ cursor: pointer;`;
 export const ProductAmount = styled.span`
 font-size: 24px;
 margin: 5px;
+
+${mobile({ margin: '5px 15px'})}
 `;
 
 export const ProductPrice = styled.span`
 font-size: 30px;
 font-weight: 200;
+
+${mobile({ marginBottom: '20px'})}
 `;
 
 export const Hr = styled.hr`
