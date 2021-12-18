@@ -21,6 +21,8 @@ export const Wrapper = styled.div`
 width: 40%;
 padding: 20px;
 background-color: #fff;
+
+${mobile({ width: '75%'})}
 `;
 
 export const Title = styled.h1`
@@ -31,6 +33,7 @@ font-weight: 300;
 export const Form = styled.form`
 display: flex;
 flex-wrap: wrap;
+${mobile({ flexDirection: 'column'})}
 `;
 
 export const Input = styled.input`
