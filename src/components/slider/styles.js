@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from '../responsive';
 
 export const Container = styled.section`
 width: 100%;
@@ -6,6 +7,8 @@ height: 100vh;
 display: flex;
 
 position: relative;
+
+${mobile({ display: 'none'})};
 
 `;
 

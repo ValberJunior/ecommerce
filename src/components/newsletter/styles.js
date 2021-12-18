@@ -1,4 +1,5 @@
-const { default: styled } = require("styled-components");
+import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 export const Container = styled.section`
 height: 60vh;
@@ -12,12 +13,16 @@ flex-direction: column;
 export const Title = styled.h3`
 font-size: 70px;
 margin-bottom: 20px;
+
+${mobile({ fontSize: '60px'})}
 `;
 
 export const Description = styled.div`
 font-size: 24px;
 font-weight: 300;
 margin-bottom: 20px;
+
+${mobile({ textAlign: 'center'})}
 `;
 
 export const InputContainer = styled.div`
@@ -29,6 +34,8 @@ display: flex;
 justify-content: space-between;
 
 border: 1px solid lightgray;
+
+${mobile({ width: '80%'})}
 `;
 
 export const Input = styled.input`
