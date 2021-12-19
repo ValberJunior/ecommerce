@@ -13,7 +13,7 @@ const styles = () => {
                 <Filter>
                     <FilterText>Filter Products:</FilterText>
                     <Select>
-                        <Option disable selected>Color</Option>
+                        <Option disable value>Color</Option>
                         <Option>White</Option>
                         <Option>Black</Option>
                         <Option>Red</Option>
@@ -23,7 +23,7 @@ const styles = () => {
                     </Select>
 
                     <Select>
-                        <Option disable selected>Size</Option>
+                        <Option disable value>Size</Option>
                         <Option>XS</Option>
                         <Option>S</Option>
                         <Option>M</Option>
@@ -35,7 +35,7 @@ const styles = () => {
                 <Filter>
                     <FilterText>Sort Products:</FilterText>
                     <Select>
-                        <Option Selected>Newest</Option>
+                        <Option value>Newest</Option>
                         <Option>Price (asc)</Option>
                         <Option>Price (desc)</Option>
                     </Select>

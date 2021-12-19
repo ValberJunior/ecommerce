@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile } from '../../components/responsive';
+import { mobile, mobileMini } from '../../components/responsive';
 
 
 export const Container = styled.section`
@@ -23,6 +23,8 @@ padding: 20px;
 background-color: #fff;
 
 ${mobile({ width: '75%'})}
+
+${mobileMini({ width: '90%'})}
 `;
 
 export const Title = styled.h1`

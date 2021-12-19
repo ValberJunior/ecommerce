@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Add, Remove, ShoppingBasket } from '@material-ui/icons';
-import { mobile } from '../../components/responsive';
+import { mobile, mobileMini } from '../../components/responsive';
 
 export const Container = styled.section`
 
@@ -77,6 +77,8 @@ display: flex;
 
 export const Image = styled.img`
 width: 200px;
+
+${mobile({ width: '130px'})}
 `;
 
 export const Details = styled.div`
@@ -84,6 +86,8 @@ padding: 20px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+
+${mobileMini({ fontSize: '12px'})}
 `;
 
 export const ProductName = styled.span``;
