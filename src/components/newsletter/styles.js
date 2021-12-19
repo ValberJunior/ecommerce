@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile } from '../responsive';
+import { mobile, tablet } from '../responsive';
 
 export const Container = styled.section`
 height: 60vh;
@@ -8,11 +8,16 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
+
+${tablet({ height: '40vh'})}
+
 `;
 
 export const Title = styled.h3`
 font-size: 70px;
 margin-bottom: 20px;
+
+${tablet({ fontSize: '60px'})}
 
 ${mobile({ fontSize: '60px'})}
 `;

@@ -1,6 +1,6 @@
 import {  Copyright, MailOutline, Phone, Room } from "@material-ui/icons";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 
 export const FooterSection = styled.footer`
 display: flex;
@@ -15,6 +15,9 @@ padding: 10px 0px;
 export const Container = styled.div`
 display: flex;
 padding: 60px;
+
+
+${tablet({ justifyContent: 'space-between'})}
 
 ${mobile({ flexDirection: 'column'})}
 
@@ -58,7 +61,9 @@ export const Center = styled.div`
 flex: 1;
 padding: 20px;
 
-${mobile({ display: 'none'})}
+${tablet({ display: 'none'})};
+
+${mobile({ display: 'none'})};
 
 `;
 

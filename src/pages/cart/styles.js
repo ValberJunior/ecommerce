@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Add, Remove, ShoppingBasket } from '@material-ui/icons';
-import { mobile, mobileMini } from '../../components/responsive';
+import { mobile, mobileMini, tablet } from '../../components/responsive';
 
 export const Container = styled.section`
 
@@ -51,6 +51,9 @@ margin: 0px 10px;
 export const Bottom = styled.div`
 display: flex;
 justify-content: space-between;
+
+
+${tablet({ flexDirection: 'column'})}
 
 ${mobile({ flexDirection: 'column'})}
 `;
@@ -150,6 +153,8 @@ border: 0.5px solid lightgray;
 border-radius: 10px;
 padding: 20px;
 height: 50vh;
+
+${tablet({width: '50vw', margin: 'auto', marginTop: '40px'})}
 `;
 
 export const SummaryTitle = styled.h1`

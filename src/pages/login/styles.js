@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile } from '../../components/responsive';
+import { mobile, tablet } from '../../components/responsive';
 
 
 export const Container = styled.section`
@@ -22,7 +22,9 @@ width: 25%;
 padding: 20px;
 background-color: #fff;
 
-${mobile({ width: '75%'})}
+${tablet({ width: '50vw'})};
+
+${mobile({ width: '75%'})};
 `;
 
 export const Title = styled.h1`

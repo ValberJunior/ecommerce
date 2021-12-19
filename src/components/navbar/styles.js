@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Search , ShoppingCartOutlined  } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
-import { mobile, mobileMini } from '../responsive';
+import { mobile, mobileMini, tablet } from '../responsive';
 
 
 export const Container = styled.header`
@@ -17,7 +17,9 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 
-${mobile({padding: '10px 0px', justifyContent: 'center'})}
+${tablet({width: '100vw'})};
+
+${mobile({padding: '10px 0px', justifyContent: 'center'})};
 
 `;
 

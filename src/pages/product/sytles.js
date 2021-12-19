@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Add, Remove } from '@material-ui/icons';
-import { mobile } from '../../components/responsive';
+import { mobile, tablet } from '../../components/responsive';
 
 export const Container = styled.section``;
 
@@ -19,6 +19,8 @@ export const Image = styled.img`
 width: 100%;
 height: 90vh;
 object-fit: cover;
+
+${tablet({ height: '50vh'})}
 
 ${mobile({ height: '40vh' })}
 `;
