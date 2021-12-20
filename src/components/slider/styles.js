@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile, tablet } from '../responsive';
+import { mobile, tablet, viewPort } from '../responsive';
 
 export const Container = styled.section`
 width: 100%;
@@ -8,7 +8,9 @@ display: flex;
 
 position: relative;
 
-${tablet({display: 'none'})}
+${viewPort({display: 'none'})};
+
+${tablet({display: 'none'})};
 
 ${mobile({ display: 'none'})};
 
@@ -65,6 +67,8 @@ transition: all 1.5s ease;
 
 transform: translate(${props=>props.slideIndex * -100}vw);
 
+${viewPort({width: '100vw'})};
+
 `;
 
 export const Slide = styled.div`
@@ -76,7 +80,6 @@ align-items: center;
 
 background-color: #${props=>props.bg};
 
-
 `;
 
 export const ImgContainer = styled.div`
@@ -87,6 +90,7 @@ height: 100%;
 
 export const Image = styled.img`
 height: 80%;
+
 
 `;
 

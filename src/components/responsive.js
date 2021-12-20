@@ -11,9 +11,11 @@ export const tablet = (props)=>{
 
 export const viewPort = (props)=>{
     return css`
-    @media only screen and (max-width: 765px)
+    @media only screen and (max-width: 900px){
+        ${props}
+    }
     `
-}
+};
 
 
 export const mobile = (props)=>{

@@ -1,6 +1,6 @@
 import {  Copyright, MailOutline, Phone, Room } from "@material-ui/icons";
 import styled from "styled-components";
-import { mobile, tablet } from "../responsive";
+import { mobile, tablet , viewPort} from "../responsive";
 
 export const FooterSection = styled.footer`
 display: flex;
@@ -16,6 +16,7 @@ export const Container = styled.div`
 display: flex;
 padding: 60px;
 
+${viewPort({ padding: '30px 10px'})};
 
 ${tablet({ justifyContent: 'space-between'})}
 
@@ -60,6 +61,8 @@ margin-right: 20px;
 export const Center = styled.div`
 flex: 1;
 padding: 20px;
+
+${viewPort({ display: 'none'})};
 
 ${tablet({ display: 'none'})};
 

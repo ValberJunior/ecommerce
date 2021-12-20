@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobileMini } from "../responsive";
+import { mobileMini, viewPort} from "../responsive";
 
 export const Container = styled.section`
 height: 30px;
@@ -10,6 +10,8 @@ align-items: center;
 justify-content: center;
 font-size: 14px;
 font-weight: 500;
+
+${viewPort({width: '100vw'})};
 
 ${mobileMini({ fontSize: '11px'})}
 `;
