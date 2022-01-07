@@ -77,26 +77,20 @@ height: 100vh;
 
 display: flex;
 align-items: center;
+justify-content: flex-end;
 
-background-color: #${props=>props.bg};
-
-`;
-
-export const ImgContainer = styled.div`
-flex: 1;
-height: 100%;
+background: url('${props=>props.bg}');
+background-size: cover;
 
 `;
 
-export const Image = styled.img`
-height: 80%;
-
-
-`;
 
 export const InfoContainer = styled.div`
-flex: 1;
-padding: 50px;
+ background-color: #00000045;
+ width: 500px;
+ padding: 50px;
+ margin-right:50px;
+ color: white;
 `;
 
 export const Title = styled.h1`
@@ -112,9 +106,15 @@ letter-spacing: 3px;
 `;
 
 export const Button = styled.button`
-padding: 10px;
+padding: 10px 20px;
 font-size: 20px;
 background-color: transparent;
 cursor: pointer;
+
+background-color: white;
+
+border: 1px solid #cdcdcd;
+
+border-radius: 10px;
 `;
 

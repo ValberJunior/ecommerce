@@ -9,6 +9,9 @@ justify-content: center;
 
 flex-direction: column;
 
+background-color: #111;
+color: #fff;
+
 padding: 10px 0px;
 `;
 

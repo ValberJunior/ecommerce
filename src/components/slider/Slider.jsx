@@ -1,5 +1,5 @@
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons"
-import { ArrowLeft, ArrowRight , Container, Slide, ImgContainer,Image, InfoContainer, Wrapper, Title, Desc, Button } from "./styles"
+import { ArrowLeft, ArrowRight , Container, Slide, InfoContainer, Wrapper, Title, Desc, Button } from "./styles"
 import { useState } from "react";
 import {sliderItems} from '../../data';
 
@@ -25,9 +25,6 @@ const Slider = () => {
                 <Wrapper slideIndex={slideIndex}>
                     {sliderItems.map(item=>
                     <Slide bg={item.bg} key={item.id}>
-                        <ImgContainer>
-                        <Image src={item.img} alt='Shop Model'/>
-                        </ImgContainer>
 
                         <InfoContainer>
                             <Title>{item.title}</Title>
