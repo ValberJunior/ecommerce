@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile, tablet } from '../../components/responsive';
+import { mobile, tablet, viewPort } from '../../components/responsive';
 
 
 export const Container = styled.section`
@@ -46,19 +46,18 @@ margin: 10px 0px;
 padding: 10px;
 `;
 
-export const Button = styled.button`
-width: 40%;
-border: none;
-outline: none;
-padding: 15px 20px;
+export const BtnGroup = styled.div`
+width: 100%;
 
-background-color: teal;
-color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 
-margin-bottom: 15px;
+padding: 10px 0px;
 
-cursor: pointer;
+${viewPort({flexDirection: 'column'})};
 `;
+
 
 export const Link = styled.a`
 

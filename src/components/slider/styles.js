@@ -87,10 +87,12 @@ background-size: cover;
 
 export const InfoContainer = styled.div`
  background-color: #00000045;
- width: 500px;
- padding: 50px;
- margin-right:50px;
+ width: 450px;
+ padding: 40px;
+ margin-right: 65px;
  color: white;
+ border-top-left-radius: 40px;
+ border-bottom-right-radius: 40px;
 `;
 
 export const Title = styled.h1`

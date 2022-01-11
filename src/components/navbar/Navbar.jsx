@@ -1,8 +1,11 @@
 import React from 'react'
 import { Center, Container, Input, Language, Left, Logo, Right, SearchContainer, SearchIcon, MenuItem, Wrapper, ShoppingCart, BadgeSection } from './styles';
-
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const Navigate = useNavigate();
+
     return (
         <Container>
             <Wrapper>
@@ -19,8 +22,8 @@ const Navbar = () => {
                    </Logo>
                 </Center>
                <Right>
-                  <MenuItem>Register</MenuItem>
-                  <MenuItem>Sign In</MenuItem>
+                  <MenuItem onClick={()=>{ Navigate('/register') }}>Register</MenuItem>
+                  <MenuItem onClick={()=>{ Navigate('/login') }}>Sign In</MenuItem>
 
                   <BadgeSection badgeContent={4} color='primary'>
                       <ShoppingCart/>

@@ -1,7 +1,12 @@
-import { Agreement, Button, Container, Form, Input, Title, Wrapper } from "./styles"
+import { Button } from "../../components"
+import { Agreement, BtnGroup, Container, Form, Input, Title, Wrapper } from "./styles"
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
+
+    const Navigate = useNavigate();
+
     return (
         <Container>
             <Wrapper>
@@ -19,7 +24,10 @@ const Register = () => {
                         By creating an account, I consent to the processing of my personal data in accordance with the <strong>PRIVACY POLICY</strong>
                     </Agreement>
 
-                    <Button>CREATE</Button>
+                    <BtnGroup>
+                        <Button onClick={()=>{ Navigate('*') }}>CREATE</Button>
+                        <Button onClick={()=>{ Navigate('/') }}>BACK</Button>
+                    </BtnGroup>
                 </Form>
                 
             </Wrapper>         

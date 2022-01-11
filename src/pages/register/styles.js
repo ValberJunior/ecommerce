@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile, mobileMini, tablet } from '../../components/responsive';
+import { mobile, mobileMini, tablet , viewPort } from '../../components/responsive';
 
 
 export const Container = styled.section`
@@ -52,15 +52,12 @@ font-size: 12px;
 margin: 20px 0px;
 `;
 
-export const Button = styled.button`
-width: 40%;
-border: none;
-outline: none;
-padding: 15px 20px;
+export const BtnGroup = styled.div`
+width: 100%;
 
-background-color: teal;
-color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 
-cursor: pointer;
+${viewPort({flexDirection: 'column'})};
 `;
-

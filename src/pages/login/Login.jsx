@@ -1,7 +1,12 @@
-import { Button, Container, Form, Input, Link, Title, Wrapper } from "./styles"
+import { Button } from "../../components"
+import { BtnGroup, Container, Form, Input, Link, Title, Wrapper } from "./styles";
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+
+    const Navigate = useNavigate();
+
     return (
         <Container>
             <Wrapper>
@@ -10,7 +15,12 @@ const Login = () => {
                 <Form>
                     <Input placeholder="username" />
                     <Input placeholder="password" />
-                    <Button>LOGIN</Button>
+
+                    <BtnGroup>
+                        <Button onClick={()=>{ Navigate('*') }}>LOGIN</Button>
+                        <Button onClick={()=>{ Navigate('/') }}>BACK</Button>
+                    </BtnGroup>
+                    
 
                     <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
                     <Link>CREATE A NEW ACCOUNT</Link>

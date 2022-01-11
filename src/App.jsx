@@ -1,13 +1,16 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { Home } from './pages';
-import { theme } from './theme';
+import { BrowserRouter as Router } from 'react-router-dom'
+import Routes from './routes';
+
+
+
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Home/>
-    </ThemeProvider>
-  );
+    <Router>
+        <Routes/>
+    </Router>
+ );
 }
 
 export default App;
