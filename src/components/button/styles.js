@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { viewPort } from "../responsive";
 
 export const Btn = styled.button`
 width: 40%;
@@ -11,4 +12,6 @@ background-color: teal;
 color: white;
 
 cursor: pointer;
+
+${viewPort({width: '90%', margin: 'auto', marginBottom: '10px'})};
 `;

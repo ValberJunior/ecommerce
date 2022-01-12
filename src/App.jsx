@@ -6,9 +6,12 @@ import Routes from './routes';
 
 
 function App() {
+
+  const user = true ;
+
   return (
     <Router>
-        <Routes/>
+        <Routes user={user}/>
     </Router>
  );
 }

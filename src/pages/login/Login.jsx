@@ -22,8 +22,8 @@ const Login = () => {
                     </BtnGroup>
                     
 
-                    <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-                    <Link>CREATE A NEW ACCOUNT</Link>
+                    <Link onClick={()=>{ Navigate('*') }} >DO NOT YOU REMEMBER THE PASSWORD?</Link>
+                    <Link onClick={()=>{ Navigate('/register') }} >CREATE A NEW ACCOUNT</Link>
                 </Form>
                 
             </Wrapper>         

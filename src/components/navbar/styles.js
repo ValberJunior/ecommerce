@@ -83,6 +83,7 @@ ${viewPort({display: 'flex', justifyContent:'center'})};
 
 export const Logo = styled.h1`
 font-weight: bold;
+cursor: pointer;
 
 ${mobile({fontSize: '15px', marginLeft:'5px'})}
 

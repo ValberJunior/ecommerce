@@ -17,7 +17,7 @@ const Navbar = () => {
                    </SearchContainer>
                </Left>
                <Center>
-                   <Logo>
+                   <Logo onClick={()=>{ Navigate('/') }}>
                        SHOOP <i style={{color: 'tomato'}} className="fas fa-shopping-bag"></i>
                    </Logo>
                 </Center>

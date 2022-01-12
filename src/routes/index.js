@@ -1,17 +1,17 @@
-import { Routes , Route } from 'react-router-dom';
+import { Routes , Route , Navigate } from 'react-router-dom';
 import { Cart, Home, Login, NotFound, Product, ProductList, Register } from '../pages';
 
 
-const mainRoutes = ()=>{
+const mainRoutes = ({user})=>{
 
     return(
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/register' element={<Register/>}/>
+            <Route path='/login' element={ user? <Navigate to ='/'/> : <Login/>}/>
+            <Route path='/register'element={ user? <Navigate to ='/'/> : <Register/>}/>
             <Route path='/cart' element={<Cart/>}/>
-            <Route path='/product' element={<Product/>}/>
-            <Route path='/products' element={<ProductList/>}/> 
+            <Route path='/products/:category' element={<ProductList/>}/>
+            <Route path='/product/:id' element={<Product/>}/>
             <Route path='*' element={<NotFound/>}/> 
         </Routes>
     )
