@@ -1,12 +1,14 @@
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
- 
 import { Container, Filter, FilterContainer, FilterText, Option, Select, Title } from './styles'
 import { Announcement, Footer, Navbar, Newsletter, Products } from '../../components';
 
 const ProductList = () => {
 
     const location = useLocation();
+
+    console.log(location)
+
     const cat = location.pathname.split('/')[2];
     const [ filter, setFilter ] = useState({});
     const [ sort , setSort ] = useState('Newest');
@@ -19,25 +21,26 @@ const ProductList = () => {
         })
     }
 
-    console.log(filter)
     return (
         <Container>
             <Navbar/>
             <Announcement/>
 
-            <Title>Dresses</Title>
+            <Title>{cat}</Title>
 
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Products:</FilterText>
                     <Select name='color' onChange={handleFilters}>
                         <Option disable value>Color</Option>
-                        <Option>White</Option>
-                        <Option>Black</Option>
-                        <Option>Red</Option>
-                        <Option>Blue</Option>
-                        <Option>Yellow</Option>
-                        <Option>Green</Option>
+                        <Option>white</Option>
+                        <Option>black</Option>
+                        <Option>red</Option>
+                        <Option>blue</Option>
+                        <Option>yellow</Option>
+                        <Option>green</Option>
+                        <Option>brown</Option>
+                        <Option>gray</Option>
                     </Select>
 
                     <Select name='size' onChange={handleFilters}>
