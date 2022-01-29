@@ -1,7 +1,11 @@
 import { AddIcon, BagIcon, Bottom, Button, Container, Details, Hr, Image, Info, PriceDetail, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductDetails, ProductId, ProductName, ProductPrice, ProductSize, RemoveIcon, Summary, SummaryItem, SummaryItemPrice, SummaryItemText, SummaryTitle, Title, Top, TopButton, TopText, TopTexts, Wrapper } from './styles'
 import { Announcement, Footer, Navbar, Newsletter } from '../../components';
+import { useSelector } from 'react-redux';
 
 const Cart = () => {
+
+    const cart = useSelector(state=>state.cart);
+
     return (
         <Container>
             <Navbar/>
@@ -19,55 +23,41 @@ const Cart = () => {
                 </Top>
                 <Bottom>
                     <Info>
-                        <Product>
+                       {cart.products.map(product=>
+                       (
+                        <>
+                        <Product key={Math.random()*100}>
                             <ProductDetails>
-                                <Image src='https://www.pngarts.com/files/2/Shoes-Transparent-Background-PNG.png' alt='image product'/>
+                                <Image src={product.img} alt={product.title}/>
                                 <Details>
-                                    <ProductName><strong>Product:</strong> JESSIE THUNDER SHOES</ProductName>
-                                    <ProductId><strong>ID:</strong> 98493473949</ProductId>
-                                    <ProductColor color='gray' />
-                                    <ProductSize><strong>Size:</strong> 37.5</ProductSize>
+                                    <ProductName><strong>Product:</strong> {product.title}</ProductName>
+                                    <ProductId><strong>ID:</strong>{product._id}</ProductId>
+                                    <ProductColor color={product.color} />
+                                    <ProductSize><strong>Size:</strong> {product.size}</ProductSize>
                                 </Details>
                             </ProductDetails>
                             <PriceDetail>
                                 <ProductAmountContainer>
                                     <AddIcon/>
-                                    <ProductAmount>2</ProductAmount>
+                                    <ProductAmount>{product.quantity}</ProductAmount>
                                     <RemoveIcon/>
                                 </ProductAmountContainer>
 
-                                <ProductPrice>$ 30</ProductPrice>
+                                <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
                             </PriceDetail>
                         </Product>
+                         <Hr/>
+                        </>
+                       )
+                       )}
 
-                        <Hr/>
-
-                        <Product>
-                            <ProductDetails>
-                                <Image src='https://www.pngarts.com/files/1/T-Shirt-Transparent-Background-PNG.png' alt='image product'/>
-                                <Details>
-                                    <ProductName><strong>Product:</strong> HAKURA T-SHIRT</ProductName>
-                                    <ProductId><strong>ID:</strong> 98493473949</ProductId>
-                                    <ProductColor color='black' />
-                                    <ProductSize><strong>Size:</strong> M</ProductSize>
-                                </Details>
-                            </ProductDetails>
-                            <PriceDetail>
-                                <ProductAmountContainer>
-                                    <AddIcon/>
-                                    <ProductAmount>2</ProductAmount>
-                                    <RemoveIcon/>
-                                </ProductAmountContainer>
-
-                                <ProductPrice>$ 30</ProductPrice>
-                            </PriceDetail>
-                        </Product>
+                       
                     </Info>
                     <Summary>
                         <SummaryTitle>ORDER SUMMARY</SummaryTitle>
                         <SummaryItem>
                             <SummaryItemText>Subtotal</SummaryItemText>
-                            <SummaryItemPrice>$ 120</SummaryItemPrice>
+                            <SummaryItemPrice>$ { cart.Total}</SummaryItemPrice>
                         </SummaryItem>
 
                         <SummaryItem >
@@ -82,7 +72,7 @@ const Cart = () => {
 
                         <SummaryItem type='total'>
                             <SummaryItemText>Total</SummaryItemText>
-                            <SummaryItemPrice>$ 120</SummaryItemPrice>
+                            <SummaryItemPrice>$ { cart.total}</SummaryItemPrice>
                         </SummaryItem>
 
                         <Button>CHECKOUT NOW</Button>

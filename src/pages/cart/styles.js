@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Add, Remove, ShoppingBasket } from '@material-ui/icons';
-import { mobile, mobileMini, tablet } from '../../components/responsive';
+import { mobile, mobileMini, tablet , viewPort} from '../../components/responsive';
 
 export const Container = styled.section`
-
+${mobile({ width: '350px', margin: 'auto'})}
 `;
 
 export const Wrapper = styled.div`
@@ -24,7 +24,7 @@ justify-content: space-between;
 
 padding: 20px;
 
-${mobile({ padding: '25px 5px'})}
+${viewPort({ padding: '25px 5px'})}
 
 `;
 
@@ -39,7 +39,7 @@ color: ${props=>props.type === 'filled' && 'white'};
 `;
 
 export const TopTexts = styled.div`
-${mobile({ display: 'none'})}
+${viewPort({ display: 'none'})}
 `;
 
 export const TopText = styled.span`
@@ -55,7 +55,7 @@ justify-content: space-between;
 
 ${tablet({ flexDirection: 'column'})}
 
-${mobile({ flexDirection: 'column'})}
+${viewPort({ flexDirection: 'column'})}
 `;
 
 export const Info = styled.div`
@@ -68,7 +68,7 @@ justify-content: space-between;
 
 padding: 30px 5px;
 
-${mobile({ flexDirection: 'column'})}
+${viewPort({ flexDirection: 'column'})}
 `;
 
 export const ProductDetails = styled.div`
@@ -81,7 +81,7 @@ display: flex;
 export const Image = styled.img`
 width: 200px;
 
-${mobile({ width: '130px'})}
+${viewPort({ width: '130px'})}
 `;
 
 export const Details = styled.div`
@@ -133,14 +133,14 @@ export const ProductAmount = styled.span`
 font-size: 24px;
 margin: 5px;
 
-${mobile({ margin: '5px 15px'})}
+${viewPort({ margin: '5px 15px'})}
 `;
 
 export const ProductPrice = styled.span`
 font-size: 30px;
 font-weight: 200;
 
-${mobile({ marginBottom: '20px'})}
+${viewPort({ marginBottom: '20px'})}
 `;
 
 export const Hr = styled.hr`
