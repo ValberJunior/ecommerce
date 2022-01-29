@@ -1,42 +1,79 @@
 import { AddContainer, AddIcon, Amount, AmountContainer, Button, Container, Desc, Filter, FilterColor, FilterContainer, FilterSize, FilterSizeOption, FilterTitle, Image, ImgContainer, InfoContainer, Price, RemoveIcon, Title, Wrapper } from './sytles';
 import { Announcement, Footer, Navbar, Newsletter } from '../../components';
+import { useLocation } from 'react-router-dom';
+import { useState , useEffect } from 'react';
+import { publicRequest } from '../../services';
+import { addProduct } from '../../redux/cartRedux';
+import { useDispatch } from 'react-redux';
+
 
 
 const Product = () => {
+    const location = useLocation();
+    const id = location.pathname.split("/")[2];
+    const [ product, setProduct ] = useState({});
+    const [ quantity, setQuantity ] = useState(1);
+    const [ color , setColor ] = useState('');
+    const [ size, setSize ] = useState('');
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        const getProduct = async ()=> {
+        try{
+            const res = await publicRequest.get("/products/find/"+id);
+            setProduct(res.data);
+        }
+        catch(err){
+            console.log(err)
+        }
+    };
+        getProduct()        
+    },[id]);
+
+    const handleQuantity = (type) =>
+    {
+        if(type === 'dec'){
+         quantity > 1 && setQuantity(quantity - 1);
+        }
+        else{
+            setQuantity( quantity + 1);
+        }
+    }
+
+    const handleClick = ()=> {
+       dispatch(addProduct({...product, quantity , color, size}));   
+    };
+
     return (
         <Container>
             <Navbar/>
             <Announcement/>
             <Wrapper>
                 <ImgContainer>
-                    <Image src='https://i.ibb.co/S6qMxwr/jean.png' alt='fashion model'/>
+                    <Image src={product.img} alt='fashion model'/>
                 </ImgContainer>
 
                 <InfoContainer>
-                    <Title>Denim Jumpsuit</Title>
+                    <Title>{product.title}</Title>
                     <Desc>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem laudantium natus repellat ex dignissimos 
-                        corporis culpa, unde aliquam cupiditate quasi sequi minus,tenetur fugiat accusamus commodi quas praesentium illo impedit.
-                        Excepturi vitae, sunt molestiae ullam labore consequatur iure modi ieos quam, inventore incidunt facilis distinctio!
+                       {product.desc}
                     </Desc>
-                    <Price>$ 20</Price>
+                    <Price>$ {product.price}</Price>
 
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color</FilterTitle>
-                            <FilterColor color="black"/>
-                            <FilterColor color="darkblue"/>
-                            <FilterColor color="gray"/>
+                                { product.color?.map(c=>(
+                                <FilterColor color={c} key={c} onClick={()=>{setColor(c)}}/>
+                                )) }
                         </Filter>
 
                         <Filter>
                             <FilterTitle>Size</FilterTitle>
-                            <FilterSize>
-                                <FilterSizeOption>XS</FilterSizeOption>
-                                <FilterSizeOption>S</FilterSizeOption>
-                                <FilterSizeOption>M</FilterSizeOption>
-                                <FilterSizeOption>L</FilterSizeOption>
-                                <FilterSizeOption>XL</FilterSizeOption>
+                            <FilterSize onChange={(e)=>setSize(e.target.value)}>
+                            { product.size?.map(s=>(
+                                <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                                )) }
                             </FilterSize>
                         </Filter>
                     </FilterContainer>
@@ -44,12 +81,12 @@ const Product = () => {
                     <AddContainer>
 
                         <AmountContainer>
-                            <RemoveIcon/>
-                            <Amount>1</Amount>
-                            <AddIcon/>
+                            <RemoveIcon onClick={()=>{handleQuantity('dec')}}/>
+                            <Amount>{quantity}</Amount>
+                            <AddIcon onClick={()=>{handleQuantity('inc')}}/>
                         </AmountContainer>
 
-                        <Button>ADD TO CART</Button>
+                        <Button onClick={handleClick}>ADD TO CART</Button>
                         
                     </AddContainer>
 
