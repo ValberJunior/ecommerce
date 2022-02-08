@@ -1,10 +1,43 @@
+import React from 'react';
+import { useEffect, useState } from 'react';
 import { AddIcon, BagIcon, Bottom, Button, Container, Details, Hr, Image, Info, PriceDetail, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductDetails, ProductId, ProductName, ProductPrice, ProductSize, RemoveIcon, Summary, SummaryItem, SummaryItemPrice, SummaryItemText, SummaryTitle, Title, Top, TopButton, TopText, TopTexts, Wrapper } from './styles'
 import { Announcement, Footer, Navbar, Newsletter } from '../../components';
 import { useSelector } from 'react-redux';
+import StripeCheckout from 'react-stripe-checkout';
+import { userRequest } from '../../services/services';
+import { useNavigate } from 'react-router-dom';
+
+
+const KEY = 'pk_test_51KAuPKB6LFO7RKgdjPqtmKWQ3KsCmoKuvFT4JP0xasvi6f0HC2z97bvmmgij2bWnVvRtQa1a1wxYlrwJH3CT1fiR00lIuTZmvo';
 
 const Cart = () => {
 
     const cart = useSelector(state=>state.cart);
+    const [ stripeToken, setStripeToken] = useState("");
+    const navigate = useNavigate();
+
+
+    // useEffect(()=>{
+
+    //     const makeRequest = async ()=>{
+    //         try{
+    //            const res = await userRequest.post("/checkout/payment",
+    //           {
+    //            tokenId: stripeToken.id,
+    //            amount: 500,
+    //           }) ;
+    //           console.log(stripeToken)
+    //           navigate('/success');
+    //         }catch(err){
+    //             console.log(err)
+    //         }
+    //     };
+
+    //     stripeToken && cart.total >=1 && makeRequest();
+
+    // }, [stripeToken, cart.total, navigate])
+
+
 
     return (
         <Container>
@@ -25,8 +58,7 @@ const Cart = () => {
                     <Info>
                        {cart.products.map(product=>
                        (
-                        <>
-                        <Product key={Math.random()*100}>
+                        <Product key={Math.ceil(Math.random()*100)}>
                             <ProductDetails>
                                 <Image src={product.img} alt={product.title}/>
                                 <Details>
@@ -45,9 +77,8 @@ const Cart = () => {
 
                                 <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
                             </PriceDetail>
+                            <Hr/>
                         </Product>
-                         <Hr/>
-                        </>
                        )
                        )}
 
@@ -75,7 +106,17 @@ const Cart = () => {
                             <SummaryItemPrice>$ { cart.total}</SummaryItemPrice>
                         </SummaryItem>
 
+                    <StripeCheckout
+                    name='SHOOP STORE'
+                    image='https://cdn.iconscout.com/icon/free/png-64/bag-2456694-2036148.png'
+                    billingAddress
+                    description={`Your total is $${cart.total}`}
+                    amount={cart.total*100}
+                    token={(token)=>{setStripeToken(token); console.log(token, stripeToken)}}
+                    stripeKey={KEY}
+                    >
                         <Button>CHECKOUT NOW</Button>
+                    </StripeCheckout> 
                     </Summary>
                 </Bottom>
             </Wrapper>

@@ -5,3 +5,4 @@ export { default as Register } from './register/Register';
 export { default as Login } from './login/Login';
 export { default as Cart } from './cart/Cart';
 export { default as NotFound } from './notFound/NotFound';
+export { default as Success} from './success/Success'

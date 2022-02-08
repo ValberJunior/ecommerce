@@ -1,6 +1,5 @@
 import { Routes , Route , Navigate } from 'react-router-dom';
-import { Cart, Home, Login, NotFound, Product, ProductList, Register } from '../pages';
-
+import { Cart, Home, Login, NotFound, Product, ProductList, Register, Success } from '../pages';
 
 const mainRoutes = ({user})=>{
 
@@ -12,6 +11,7 @@ const mainRoutes = ({user})=>{
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/products/:category' element={<ProductList/>}/>
             <Route path='/product/:id' element={<Product/>}/>
+            <Route path='/success' element={<Success/>}/>
             <Route path='*' element={<NotFound/>}/> 
         </Routes>
     )
