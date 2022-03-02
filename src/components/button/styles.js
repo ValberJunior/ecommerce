@@ -14,4 +14,10 @@ color: white;
 cursor: pointer;
 
 ${viewPort({width: '90%', margin: 'auto', marginBottom: '10px'})};
+
+&:disable{
+    color: green;
+    cursor: not-allowed;
+}
+
 `;

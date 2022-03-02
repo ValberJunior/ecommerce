@@ -13,29 +13,32 @@ const KEY = 'pk_test_51KAuPKB6LFO7RKgdjPqtmKWQ3KsCmoKuvFT4JP0xasvi6f0HC2z97bvmmg
 const Cart = () => {
 
     const cart = useSelector(state=>state.cart);
-    const [ stripeToken, setStripeToken] = useState("");
+    const [ stripeToken, setStripeToken] = useState({});
     const navigate = useNavigate();
 
+    const onToken = (token) => {
+        const id = token;
+        setStripeToken(id);
+    }
 
-    // useEffect(()=>{
+    useEffect(()=>{
 
-    //     const makeRequest = async ()=>{
-    //         try{
-    //            const res = await userRequest.post("/checkout/payment",
-    //           {
-    //            tokenId: stripeToken.id,
-    //            amount: 500,
-    //           }) ;
-    //           console.log(stripeToken)
-    //           navigate('/success');
-    //         }catch(err){
-    //             console.log(err)
-    //         }
-    //     };
+        const makeRequest = async ()=>{
+            try{
+                    const res = await userRequest.post("/checkout/payment",
+                    {
+                    tokenId: stripeToken.id,
+                    amount: 500,
+                    }) ;
+                    navigate('/success', {data: res.data});
+                }catch(err){
+                             console.log(err)
+                }
+        };
 
-    //     stripeToken && cart.total >=1 && makeRequest();
+        stripeToken && cart.total >= 1 && makeRequest();
 
-    // }, [stripeToken, cart.total, navigate])
+    }, [stripeToken, cart.total, navigate])
 
 
 
@@ -112,7 +115,7 @@ const Cart = () => {
                     billingAddress
                     description={`Your total is $${cart.total}`}
                     amount={cart.total*100}
-                    token={(token)=>{setStripeToken(token); console.log(token, stripeToken)}}
+                    token={(token)=>{onToken(token)}}
                     stripeKey={KEY}
                     >
                         <Button>CHECKOUT NOW</Button>

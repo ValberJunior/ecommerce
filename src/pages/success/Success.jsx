@@ -1,10 +1,13 @@
 import { Button, Container, SucessAnimation, Title, Wrapper } from "./styles"
 import successGif from '../../assets/Success.gif';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Success = () => {
 
+    const location = useLocation();
     const Navigate = useNavigate();
+
+    console.log(location);
 
     return (
         <Container>
@@ -13,7 +16,7 @@ const Success = () => {
                 <Title>Transaction performed successfully !!!</Title>
                 <Button
                 onClick={()=>{ Navigate('/') }}>
-                Back to Home
+                     Back to Home
                 </Button>
             </Wrapper>
         </Container>

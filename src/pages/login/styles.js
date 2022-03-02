@@ -58,6 +58,18 @@ padding: 10px 0px;
 ${viewPort({flexDirection: 'column'})};
 `;
 
+export const Error = styled.span`
+width: 100%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: red;
+padding: 15px;
+
+`;
+
 
 export const Link = styled.a`
 

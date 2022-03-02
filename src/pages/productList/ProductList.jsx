@@ -7,7 +7,7 @@ const ProductList = () => {
 
     const location = useLocation();
 
-    console.log(location)
+    // console.log(location)
 
     const cat = location.pathname.split('/')[2];
     const [ filter, setFilter ] = useState({});
